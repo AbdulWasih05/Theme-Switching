@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #590d22;
-  --color-secondary: #ffccd5;
+  --color-primary: #ffccd5;
+  --color-secondary: #590d22;
   --color-accent: #ff6b9d;
+  --color-background: #fff0f6;
 }
 
 /* Override for dark mode using CSS selectors */
 .dark {
-  --color-primary: #ffccd5;
-  --color-secondary: #590d22;
+  --color-primary: #590d22;
+  --color-secondary: #ffccd5;
   --color-accent: #c2185b;
+  --color-background: #c40048;
 }

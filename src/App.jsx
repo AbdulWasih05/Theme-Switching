@@ -2,10 +2,16 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [IsDark, setIsDark] = useState(false);
+  const [IsDark, setIsDark] = useState((() => {
+    const theme = localStorage.getItem("theme");
+    console.log("initial theme:", theme);
+    return theme === "dark";
+  })());
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", IsDark);
+    localStorage.setItem("theme", IsDark ? "dark" : "light");
+    console.log("theme changed to:", IsDark ? "dark" : "light");
   }, [IsDark]);
 
   return (

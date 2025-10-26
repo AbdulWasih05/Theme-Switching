@@ -22,7 +22,7 @@ const { theme, toggleTheme } = useContext(ThemeContext);
     <>
       <div className="container mx-auto max-w-full">
         <div className="flex items-center justify-center h-screen bg-background">
-          <div  className="p-16 border-black border-4 gap-8  border-solid flex flex-col items-center justify-center rounded-lg bg-primary">
+          <div  className="p-16 border-secondary border-2 gap-8  border-solid flex flex-col items-center justify-center rounded-lg bg-primary">
             <div className="text-3xl text-secondary">Theme Switcher App</div>
             <div>
               <button

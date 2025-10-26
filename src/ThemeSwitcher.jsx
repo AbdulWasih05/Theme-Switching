@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "./ThemeContext";
 
 const ThemeSwitcher = () => {
-  const [count, setCount] = useState(0);
-  const [IsDark, setIsDark] = useState(
-    (() => {
-      const theme = localStorage.getItem("theme");
-      console.log("initial theme:", theme);
-      return theme === "dark";
-    })()
-  );
+//   const [IsDark, setIsDark] = useState(
+//     (() => {
+//       const theme = localStorage.getItem("theme");
+//       console.log("initial theme:", theme);
+//       return theme === "dark";
+//     })()
+//   );
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", IsDark);
-    localStorage.setItem("theme", IsDark ? "dark" : "light");
-    console.log("theme changed to:", IsDark ? "dark" : "light");
-  }, [IsDark]);
+//   useEffect(() => {
+//     document.documentElement.classList.toggle("dark", IsDark);
+//     localStorage.setItem("theme", IsDark ? "dark" : "light");
+//     console.log("theme changed to:", IsDark ? "dark" : "light");
+//   }, [IsDark]);
+
+const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <>
@@ -25,12 +27,12 @@ const ThemeSwitcher = () => {
             <div>
               <button
                 className="bg-accent px-4 py-2 rounded text-white"
-                onClick={() => setIsDark(!IsDark)}
+                onClick={toggleTheme}
               >
                 Toggle theme
               </button>
             </div>
-              <p className="text-center text-secondary">Your current theme is: {IsDark ? "Dark" : "Light"}</p>
+              <p className="text-center text-secondary">Your current theme is: {theme}</p>
           </div>
         </div>
       </div>

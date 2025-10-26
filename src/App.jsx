@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
-
+import { ThemeProvider } from "./ThemeContext";
 function App() {
-
-
   return (
     <>
-      <ThemeSwitcher />
+      <ThemeProvider>
+        <ThemeSwitcher />
+      </ThemeProvider>
     </>
   );
 }

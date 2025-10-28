@@ -65,7 +65,7 @@ const DemoCard = () => {
             <p className="text-secondary/70 text-sm mb-4">{card.description}</p>
 
             {/* Color Bar */}
-            <div className={`h-1 rounded-full bg-gradient-to-r ${card.color}`}></div>
+            <div className={`h-1 rounded-full bg-linear-to-r ${card.color}`}></div>
           </div>
         ))}
       </div>
@@ -139,7 +139,7 @@ const DemoCard = () => {
       </div>
 
       {/* Theme Info */}
-      <div className="mt-12 bg-gradient-to-r from-primary to-accent rounded-lg p-6 text-center">
+      <div className="mt-12 bg-linear-to-r from-primary to-accent rounded-lg p-6 text-center">
         <p className="text-secondary font-semibold text-lg">
           Current Theme: <span className="capitalize font-bold">{theme}</span>
         </p>
